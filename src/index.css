@@ -10,7 +10,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-.form-todo{
+
+.form-todo {
   background-color: white;
   width: 400px;
   padding: 1rem 0;
@@ -20,16 +21,20 @@ body {
   flex-direction: column;
   gap: 1rem;
 }
-.form-title{
+
+.form-title {
   margin: 5px;
 }
-.form-todo .input-title{
+
+.form-todo .input-title {
+  border-radius: 8px;
   font-size: 1rem;
   padding: 8px 10px;
-  border: 1px solid black;
+  border: 1px solid #808080;
   outline: none;
 }
-.form-todo .input-title:focus{
+
+.form-todo .input-title:focus {
   border: 1px solid blue;
 }
 
@@ -40,6 +45,7 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .btn-editar {
@@ -53,7 +59,8 @@ button {
 .btn-eliminar {
   background-color: red;
 }
-.container-tasks{
+
+.container-tasks {
   padding: .5rem;
   margin: 1rem auto;
   background-color: white;
@@ -65,6 +72,7 @@ button {
   gap: .5rem;
   box-sizing: border-box;
 }
+
 .card-task {
   padding: 0 1rem;
   width: 100%;
@@ -76,6 +84,7 @@ button {
   box-sizing: border-box;
   border-radius: 10px;
 }
-.card-task .title{
+
+.card-task .title {
   flex: 1;
 }

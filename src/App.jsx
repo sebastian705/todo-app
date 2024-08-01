@@ -6,7 +6,7 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
   const [id, setId] = useState('');
-  
+
   const handleInputText = (e) => {
     setTitle(e.target.value);
   }
@@ -14,10 +14,11 @@ const App = () => {
     e.preventDefault();
   }
   const handleAgregar = () => {
-    if (title == "") return
+    if (title == "") return;
     const newTask = {
       id: crypto.randomUUID(),
-      title: title
+      title: title,
+      completed: false
     };
     setTasks([...tasks, newTask]);
     setTitle("");
@@ -30,6 +31,7 @@ const App = () => {
     item.title = title;
     setTasks(temp)
     setIsEdit(false);
+    setTitle("");
     setId("");
   }
   function deleteTask(id) {
@@ -44,15 +46,15 @@ const App = () => {
   }
   return (
     <>
-    <div className='container-form-todo'>
-      <form className='form-todo' onSubmit={handleSubmit}>
-        <h1 className='form-title'>Agregar Tarea</h1>
-        <input className='input-title' type="text" onChange={handleInputText} value={title} />
-        {!isEdit ?
-          <button className='btn-agregar' type='submit' onClick={handleAgregar}>Crear Tarea</button>
-          : <button className='btn-editar' type='submit' onClick={handleEditar}>Editar</button>}
-      </form>
-    </div>
+      <div className='container-form-todo'>
+        <form className='form-todo' onSubmit={handleSubmit}>
+          <h1 className='form-title'>Agregar Tarea</h1>
+          <input className='input-title' type="text" onChange={handleInputText} value={title} />
+          {!isEdit ?
+            <button className='btn-agregar' type='submit' onClick={handleAgregar}>Crear Tarea</button>
+            : <button className='btn-editar' type='submit' onClick={handleEditar}>Editar</button>}
+        </form>
+      </div>
       <div className='container-tasks'>
         {tasks.map(task => (
           <Task
